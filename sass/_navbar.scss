@@ -1,0 +1,38 @@
+div{
+    .navbar-nav{
+        font-style:italic;
+        font-size: larger;
+                
+        .nav-link{
+            color: setup_colors($primary);
+
+            &.active{
+                font-weight: bold;
+                color: setup_colors($primary);
+            }
+        }
+    }
+    
+}
+
+.navbar-brand{
+    color: setup_colors($primary) !important;
+}
+
+.btn-dark{
+    
+    border-color: #f8f9fa !important;
+    border: 1.5px solid !important;
+    font-weight:bold !important;
+    font-style: italic !important;  
+    
+
+        &:hover{  
+            color: #545151 !important;
+            border-color: #545151 !important;  
+            background-color: #69bffd !important;
+            opacity: 80%;
+        }
+
+
+}

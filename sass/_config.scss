@@ -1,0 +1,27 @@
+//Light Primary Color -> Dark Text
+$primary: #69bffd;
+
+//Dark Primary Color -> Light Text
+//$primary: #141617;
+
+$dark: #545151;
+
+@function setup_colors($color) {
+
+    @if (lightness($color) > 70){
+
+        @return #545151;
+    }
+    @else {
+        @return #f7f7f7;
+    }
+}
+
+@mixin buttons_hover($border, $background) {
+    
+    color: #545151 !important;
+    border-color: $border !important;  
+    background-color: $background !important;
+    opacity: 80%;
+
+}

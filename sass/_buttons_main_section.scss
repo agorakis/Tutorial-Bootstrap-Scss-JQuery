@@ -1,0 +1,51 @@
+.btn-light{
+    
+
+    font-weight:bolder !important;
+    font-style: italic;  
+    
+    
+}
+
+
+.btn-light-grey{
+
+    @extend .btn-light;
+
+        &:hover{  
+
+            @include buttons_hover (#545151, #69bffd);
+
+            /*
+            @mixin code
+
+            color: #545151 !important;
+            border-color: #545151 !important;  
+            background-color: #69bffd !important;
+            opacity: 80%;
+            */
+        }
+
+}
+
+.btn-light-dark{
+
+    @extend .btn-light;
+    
+        &:hover{  
+
+            @include buttons_hover (#f8f9fa, #f48e08);
+            
+            /* 
+            @mixin code
+
+            color: #545151 !important;
+            border-color: #f8f9fa !important;  
+            background-color: #f48e08 !important;
+            opacity: 80%;
+            */
+            
+        }
+
+
+}
