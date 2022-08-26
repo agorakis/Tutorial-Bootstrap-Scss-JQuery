@@ -18,7 +18,8 @@ $(document).ready(function(){
 	});
 
     //Navbar Search Button Functionality
-    $("#btn-nav").click(function(){
+    $("#btn-nav").click(function(e){
+        e.preventDefault();
         let input = $("#search").val();
         alert( "You searched for: " + input);
 	});
@@ -47,16 +48,12 @@ $(document).ready(function(){
 
         alert("New Message!"+"\n"+"Fullname: "+fullname+"\n"+"Phone: "+phone+"\n"+"Email: "+email+"\n"+"Subject: "+subject+"\n"+"Message: "+message);
     });
-
-
+    
+    //Content Creator Button Functionality
     $("#btn_title").click(function(){
 
-
-      //alert("New Message!");
-
-
-
-      let input_title = $("#title").val();
+      if ( $('#btn_title').attr('flag') == "title"  ) {
+        let input_title = $("#title").val();
         $('#content-creator').after('<h3 class="new_title p-2">'+input_title+'</h3>');
         
         $('#title').val('');
@@ -65,24 +62,23 @@ $(document).ready(function(){
 
 
         $('#title').attr('id','paragraph');
-        $('#btn_title').attr('id','btn_paragraph');
+        $('#btn_title').attr('flag','paragraph');
 
-        $("#btn_paragraph").click(function(){
-            
-          let input_paragraph = $("#paragraph").val();
-          $('.new_title').after('<p class="new_paragraph p-2">'+input_paragraph+'</p>');
+        return;
+      }
+
+      if ( $('#btn_title').attr('flag') == "paragraph"  ) {   
+        let input_paragraph = $("#paragraph").val();
+        $('.new_title').after('<p class="new_paragraph p-2">'+input_paragraph+'</p>');
           
-          $('#title-creator').detach();
-          $('#content-creator').detach();
-          //$('#btn-creator').detach();
+        $('#title-creator').html('<h2>Great you created your own content!</h2>');
+        $('#title-creator').addClass('after_title');
+        $('#content-creator').detach();
+      }
 
-        });
+    });
 
-
-        
-      });
-
-  
+             
   
   });   
 
@@ -90,7 +86,6 @@ $(document).ready(function(){
 
 
 
-        //$('#btn_title').after('<div class="col-lg mb-4" id= "btn-creator"> <a id="btn_title" class="btn btn-light btn-light-grey mt-4"> <i class="bi bi-chevron-right"></i> Create Title</a></div>');
 
     
 
