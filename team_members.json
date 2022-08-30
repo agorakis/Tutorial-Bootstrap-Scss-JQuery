@@ -1,0 +1,27 @@
+[
+	{
+		"firstName":"Antonis",
+		"lastName": "Gorakis",
+		"email": "agorakis@gmail.com"
+	},
+	{
+		"firstName":"Teo",
+		"lastName": "Papadopoulos",
+		"email": "tpapado@gmail.com"
+	},
+	{
+		"firstName":"Nikos",
+		"lastName": "Pappas",
+		"email": "npappas@gmail.com"
+	},
+	{
+		"firstName":"Sakis",
+		"lastName": "Nikolaidis",
+		"email": "snikol@gmail.com"
+	},
+	{
+		"firstName":"Kostas",
+		"lastName": "Politis",
+		"email": "kpolitis@gmail.com"
+	}
+]

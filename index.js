@@ -78,7 +78,35 @@ $(document).ready(function(){
 
     });
 
-             
+    //Team Members Import Button Functionality
+    $("#btn_list").click(function(){
+
+      $.getJSON('./team_members.json', function(data){
+
+				$.each(data, function(i, member){
+					$('#members').append('<li class="list-group-item p-2 m-1">' + '<b>First Name: </b>' + member.firstName + '<b> Last Name: </b>' + member.lastName + '<b> Email: </b>' + member.email + '</li>');
+				});
+
+        $('#members li:nth-child(odd)').addClass('list-group-item-success');
+        $('#members li:nth-child(even)').addClass('list-group-item-primary');
+
+        $('#import-content').detach();
+
+			});
+
+    });
+
+  //Import Free Api (Random Dog Photo) Functionality
+    $.ajax({
+      method:'GET',
+      url: 'https://dog.ceo/api/breeds/image/random',
+      dataType: 'json'
+    }).done(function(data){
+      console.log(data);
+      $('#api-section').append('<img src="'+data.message+' " class="img-fluid rounded mx-auto d-block"/>');
+
+    });
+         
   
   });   
 
